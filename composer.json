@@ -31,8 +31,7 @@
 	"license": "GPL-3.0",
 	"name": "mahdiyazdani/wc-install-notice",
 	"require": {
-		"php": ">=7.4",
-		"pimple/pimple": "^3.5"
+		"php": ">=7.4"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
