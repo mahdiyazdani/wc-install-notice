@@ -163,8 +163,8 @@ class Nag {
 
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : trailingslashit( 'minified' );
 
-		wp_enqueue_style( 'wc-install-notice', plugin_dir_url( $this->plugin_file ) . 'assets/css/' . $min . 'admin.css', array(), '1.0.0' );
-		wp_enqueue_script( 'wc-install-notice', plugin_dir_url( $this->plugin_file ) . 'assets/js/' . $min . 'admin.js', array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'wc-install-notice', plugin_dir_url( $this->plugin_file ) . 'vendor/mahdiyazdani/wc-install-notice/assets/css/' . $min . 'admin.css', array(), '1.0.0' );
+		wp_enqueue_script( 'wc-install-notice', plugin_dir_url( $this->plugin_file ) . 'vendor/mahdiyazdani/wc-install-notice/assets/js/' . $min . 'admin.js', array( 'jquery' ), '1.0.0', true );
 		wp_localize_script(
 			'wc-install-notice',
 			'wc_install_notice',
