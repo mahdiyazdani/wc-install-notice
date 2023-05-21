@@ -313,15 +313,15 @@ class Nag {
 
 		// This statement prevents from producing fatal errors,
 		// in case the WooCommerce plugin is not activated on the site.
-         // phpcs:ignore WooCommerce.Commenting.CommentHooks.HookCommentWrongStyle
+		 // phpcs:ignore WooCommerce.Commenting.CommentHooks.HookCommentWrongStyle
 		$woocommerce_plugin = apply_filters( 'wc_install_notice_woocommerce_path', self::PLUGIN_SLUG . '/' . self::PLUGIN_FILE );
-        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$subsite_active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
-        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$network_active_plugins = apply_filters( 'active_plugins', get_site_option( 'active_sitewide_plugins' ) );
 
 		// Bail early in case the plugin is not activated on the website.
-        // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+		// phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
 		if ( ( empty( $subsite_active_plugins ) || ! in_array( $woocommerce_plugin, $subsite_active_plugins ) ) && ( empty( $network_active_plugins ) || ! array_key_exists( $woocommerce_plugin, $network_active_plugins ) ) ) {
 			return false;
 		}
