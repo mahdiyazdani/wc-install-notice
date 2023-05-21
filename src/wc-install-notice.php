@@ -122,29 +122,31 @@ class Nag {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return void
+	 * @return bool
 	 */
-	public function load_the_nag() {
+	public function does_it_requires_nag() {
 
 		// Bail early if the admin screen is not loaded.
 		if ( ! is_admin() ) {
-			return;
+			return false;
 		}
 
 		// Bail early if the WooCommerce plugin is activated.
 		if ( $this->is_activated() ) {
-			return;
+			return false;
 		}
 
 		// Bail early if the notice has been dismissed.
 		if ( $this->dismiss_transient && get_transient( $this->dismiss_transient ) ) {
-			return;
+			return false;
 		}
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'admin_notices', array( $this, 'print_nag' ) );
 		add_action( 'network_admin_notices', array( $this, 'print_nag' ) );
 		add_action( 'wp_ajax_wc_install_notice_dismiss_notice', array( $this, 'dismiss_notice' ) );
+
+		return true;
 	}
 
 	/**
