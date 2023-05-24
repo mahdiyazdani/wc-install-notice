@@ -81,11 +81,13 @@ class Nag {
 	 *
 	 * @param string $name Name of the plugin to be used in admin notices.
 	 *
-	 * @return void
+	 * @return __CLASS__
 	 */
 	public function set_plugin_name( $name ) {
 
 		$this->plugin_name = $name;
+	
+		return $this;
 	}
 
 	/**
@@ -95,12 +97,14 @@ class Nag {
 	 *
 	 * @param string $path The plugin file path.
 	 *
-	 * @return void
+	 * @return __CLASS__
 	 */
 	public function set_file_path( $path ) {
 
 		$this->plugin_file       = $path;
 		$this->dismiss_transient = 'wc_install_notice_dismiss_transient_' . sanitize_title( plugin_basename( $path ) );
+	
+		return $this;
 	}
 
 	/**
@@ -110,11 +114,13 @@ class Nag {
 	 *
 	 * @param string $link The learn more link.
 	 *
-	 * @return void
+	 * @return __CLASS__
 	 */
 	public function set_learn_more_link( $link ) {
 
 		$this->learn_more_link = $link;
+		
+		return $this;
 	}
 
 	/**
